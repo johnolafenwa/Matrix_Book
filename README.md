@@ -130,6 +130,24 @@ You do not need advanced prerequisites. Comfort with basic algebra is enough to 
 
 The book deliberately revisits the same ideas from several angles. That is not repetition for its own sake. Matrices become easier once you stop trying to force a single interpretation on them. A matrix can be a calculator, a camera move, a network summary, a data table, or a system of relationships. The same object keeps revealing new meanings as your understanding deepens.
 
+## Attribution
+
+**Authors:** John Olafenwa and GPT-5.4
+
+This book was created for personal learning by John Olafenwa, using the OpenAI Codex App powered by GPT-5.4.
+
+Suggested citation:
+
+> John Olafenwa and GPT-5.4. *The Matrix Book: A Visual Guide to Matrices*. 2026. Personal learning edition created using the OpenAI Codex App powered by GPT-5.4.
+
+Project and contact links:
+
+- Website: [matrix.johnolafenwa.com](https://matrix.johnolafenwa.com)
+- Repository: [github.com/johnolafenwa/Matrix_Book](https://github.com/johnolafenwa/Matrix_Book)
+- X / Twitter: [@johnolafenwa](https://x.com/johnolafenwa)
+- LinkedIn: [John Olafenwa](https://www.linkedin.com/in/olafenwajohn/)
+- Email: [johnolafenwa@gmail.com](mailto:johnolafenwa@gmail.com)
+
 ## Start Reading
 
 Begin with [Chapter 1](./chapters/01-why-matrices-matter.md).

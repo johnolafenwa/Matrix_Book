@@ -46,6 +46,20 @@ The core teaching approach stays consistent throughout:
 - Interested in data and machine learning: focus on Chapters 8, 9, 10, 13, 15, and 17.
 - Want a fast refresher: read Chapter 18 and Appendix B first, then dip into chapters as needed.
 
+## Attribution
+
+**Authors:** John Olafenwa and GPT-5.4
+
+This book was created for personal learning by John Olafenwa, using the OpenAI Codex App powered by GPT-5.4.
+
+- Published site: [matrix.johnolafenwa.com](https://matrix.johnolafenwa.com)
+- Repository: [github.com/johnolafenwa/Matrix_Book](https://github.com/johnolafenwa/Matrix_Book)
+- X / Twitter: [@johnolafenwa](https://x.com/johnolafenwa)
+- LinkedIn: [John Olafenwa](https://www.linkedin.com/in/olafenwajohn/)
+- Email: [johnolafenwa@gmail.com](mailto:johnolafenwa@gmail.com)
+
+For a citation-ready version, see the [Attribution page](/attribution).
+
 ## Table of contents
 
 <BookToc />

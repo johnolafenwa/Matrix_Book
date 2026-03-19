@@ -2,6 +2,7 @@ export const book = {
   title: "The Matrix Book",
   shortTitle: "Matrix Book",
   subtitle: "An intuitive, visual, and practical guide to matrices",
+  authors: ["John Olafenwa", "GPT-5.4"],
   description:
     "A visual-first linear algebra book that moves from tables and transformations to eigenvalues, SVD, networks, data, and dynamics.",
   parts: [
@@ -186,6 +187,7 @@ export function buildSidebar() {
       text: "Start Here",
       items: [
         { text: "Home", link: "/" },
+        { text: "Attribution", link: "/attribution" },
         { text: "Project README", link: "/README" }
       ]
     },

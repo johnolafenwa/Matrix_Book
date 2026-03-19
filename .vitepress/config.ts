@@ -24,13 +24,14 @@ function escapeHtml(value: string) {
 export default defineConfig({
   title: book.title,
   description: book.description,
-  appearance: false,
+  appearance: true,
   cleanUrls: true,
   outDir: "dist",
   lastUpdated: true,
   head: [
     ["link", { rel: "icon", href: "/matrix-book-mark.svg" }],
-    ["meta", { name: "theme-color", content: "#0f766e" }]
+    ["meta", { name: "theme-color", content: "#0f766e" }],
+    ["meta", { name: "author", content: book.authors.join(", ") }]
   ],
   markdown: {
     config(md) {
@@ -77,7 +78,8 @@ export default defineConfig({
     nav: [
       { text: "Home", link: "/" },
       { text: "Start Reading", link: "/chapters/01-why-matrices-matter" },
-      { text: "Cheat Sheet", link: "/chapters/18-cheat-sheet-and-next-steps" }
+      { text: "Cheat Sheet", link: "/chapters/18-cheat-sheet-and-next-steps" },
+      { text: "Attribution", link: "/attribution" }
     ],
     sidebar: buildSidebar(),
     outline: {
@@ -92,8 +94,9 @@ export default defineConfig({
       next: "Next"
     },
     footer: {
-      message: "Built with VitePress for a polished, navigable reading edition.",
-      copyright: "The Matrix Book"
+      message:
+        "Created for personal learning by John Olafenwa using the OpenAI Codex App powered by GPT-5.4.",
+      copyright: "Authors: John Olafenwa and GPT-5.4"
     }
   }
 });

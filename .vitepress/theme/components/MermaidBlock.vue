@@ -1,5 +1,6 @@
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
+import { useData } from "vitepress";
 import mermaid from "mermaid";
 
 const props = defineProps({
@@ -10,8 +11,27 @@ const props = defineProps({
 });
 
 const target = ref(null);
+const { isDark } = useData();
 
-onMounted(async () => {
+const lightThemeVariables = {
+  primaryColor: "#d4f4ef",
+  primaryTextColor: "#14312d",
+  primaryBorderColor: "#0f766e",
+  lineColor: "#28514a",
+  secondaryColor: "#eef7f5",
+  tertiaryColor: "#fbf6e8"
+};
+
+const darkThemeVariables = {
+  primaryColor: "#173733",
+  primaryTextColor: "#e5f2ef",
+  primaryBorderColor: "#57b8aa",
+  lineColor: "#93d8cf",
+  secondaryColor: "#12211f",
+  tertiaryColor: "#1a2b29"
+};
+
+async function renderGraph() {
   if (!target.value) {
     return;
   }
@@ -23,14 +43,7 @@ onMounted(async () => {
     theme: "base",
     securityLevel: "loose",
     fontFamily: "Source Sans 3, sans-serif",
-    themeVariables: {
-      primaryColor: "#d4f4ef",
-      primaryTextColor: "#14312d",
-      primaryBorderColor: "#0f766e",
-      lineColor: "#28514a",
-      secondaryColor: "#eef7f5",
-      tertiaryColor: "#fbf6e8"
-    }
+    themeVariables: isDark.value ? darkThemeVariables : lightThemeVariables
   });
 
   try {
@@ -43,6 +56,14 @@ onMounted(async () => {
     target.value.classList.add("mermaid-render-fallback");
     console.error(error);
   }
+}
+
+onMounted(() => {
+  void renderGraph();
+});
+
+watch(isDark, () => {
+  void renderGraph();
 });
 </script>
 
