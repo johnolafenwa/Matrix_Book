@@ -292,6 +292,11 @@ flowchart LR
 
 This is why matrix multiplication is so important. It lets us build large systems from smaller steps.
 
+<figure class="book-media">
+  <video controls playsinline preload="metadata" src="/media/animations/ch03-matrix-product-columns.mp4"></video>
+  <figcaption>This animation shows the column view of matrix multiplication: each column of <code>B</code> is pushed through <code>A</code>, producing the corresponding column of <code>AB</code>.</figcaption>
+</figure>
+
 ## Why Order Matters
 
 For ordinary numbers, `ab = ba`. For matrices, usually

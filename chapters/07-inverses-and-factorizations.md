@@ -54,6 +54,11 @@ Geometrically, an invertible matrix may stretch, rotate, shear, or reflect, but 
 
 A singular matrix loses information. An invertible matrix preserves enough information to reverse the process.
 
+<figure class="book-media">
+  <video controls playsinline preload="metadata" src="/media/animations/ch07-inverse-undo.mp4"></video>
+  <figcaption>The inverse really is an undo button: the grid and shape are transformed by <code>A</code>, then brought exactly back by <code>A^{-1}</code>.</figcaption>
+</figure>
+
 ## A Simple Example
 
 Let
@@ -347,6 +352,11 @@ flowchart LR
     L --> FACT["A = LU"]
     U --> FACT
 ```
+
+<figure class="book-media">
+  <video controls playsinline preload="metadata" src="/media/animations/ch07-factorization-steps.mp4"></video>
+  <figcaption>Instead of one mysterious transformation, factorization lets you see a sequence of simpler moves: shear, shear, then scale.</figcaption>
+</figure>
 
 ## A Concrete LU Example
 

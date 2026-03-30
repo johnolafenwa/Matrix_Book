@@ -162,6 +162,11 @@ Think of elimination as clearing a staircase shape through the matrix:
 - pick the next pivot,
 - repeat.
 
+<figure class="book-media">
+  <video controls playsinline preload="metadata" src="/media/animations/ch04-pivot-staircase.mp4"></video>
+  <figcaption>The pivot boxes step down and to the right in a staircase. That is the visual pattern elimination is trying to build.</figcaption>
+</figure>
+
 ## Worked Example: A `2 x 2` System
 
 Solve
@@ -406,6 +411,11 @@ This explains why different systems behave differently:
 - one intersection point means one solution
 - parallel or conflicting constraints mean no solution
 - overlapping constraints can produce infinitely many solutions
+
+<figure class="book-media">
+  <video controls playsinline preload="metadata" src="/media/animations/ch04-system-intersection-cases.mp4"></video>
+  <figcaption>Here the same pair of equations moves through the three core cases: one crossing, no crossing, and complete overlap.</figcaption>
+</figure>
 
 ## Three Possible Outcomes
 

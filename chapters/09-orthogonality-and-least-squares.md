@@ -200,6 +200,11 @@ In `R^3`,
 
 An orthonormal basis is the nicest possible coordinate system. Angles are easy. Lengths are easy. Coordinates are easy.
 
+<figure class="book-media">
+  <video controls playsinline preload="metadata" src="/media/animations/ch09-orthonormal-coordinates.mp4"></video>
+  <figcaption>This animation contrasts a skewed coordinate frame with a cleaner orthonormal one, where perpendicular unit directions make geometry easier to read.</figcaption>
+</figure>
+
 ## Coordinates in an orthonormal basis
 
 Suppose `{q_1, q_2, ..., q_n}` is an orthonormal basis. Then any vector `b` can be written as

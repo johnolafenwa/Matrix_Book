@@ -104,6 +104,11 @@ A matrix with a large condition number squashes space strongly in some direction
 
 That is why solving systems with nearly dependent columns can be numerically dangerous.
 
+<figure class="book-media">
+  <video controls playsinline preload="metadata" src="/media/animations/ch17-conditioning-sensitivity.mp4"></video>
+  <figcaption>These inputs start almost on top of each other, but an ill-conditioned problem can send them to very different outputs. That is the danger a large condition number warns about.</figcaption>
+</figure>
+
 ## 17.5 Subtractive Cancellation
 
 One common source of trouble is **catastrophic cancellation**.

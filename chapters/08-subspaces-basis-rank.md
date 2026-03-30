@@ -95,6 +95,11 @@ flowchart TD
     B --> D["Count dimension"]
 ```
 
+<figure class="book-media">
+  <video controls playsinline preload="metadata" src="/media/animations/ch08-span-to-plane.mp4"></video>
+  <figcaption>One nonzero vector spans a line. Add an independent second vector, and their combinations spread across a whole plane.</figcaption>
+</figure>
+
 ## Linear Independence
 
 A list of vectors is **linearly independent** if none of them can be built from the others.
@@ -265,6 +270,11 @@ t
 The null space is a line through the origin.
 
 That matches the geometry: this matrix collapses the plane onto a line.
+
+<figure class="book-media">
+  <video controls playsinline preload="metadata" src="/media/animations/ch08-null-space-collapse.mp4"></video>
+  <figcaption>Different inputs can be visibly distinct before the transformation and then collapse together after it. That lost direction is what the null space measures.</figcaption>
+</figure>
 
 ## Column Space and Null Space as Two Sides of a Matrix
 

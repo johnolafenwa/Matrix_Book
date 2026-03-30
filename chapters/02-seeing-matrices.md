@@ -88,6 +88,11 @@ Rows tell one story. Columns tell another.
  columns 1, 2, 3
 ```
 
+<figure class="book-media">
+  <video controls playsinline preload="metadata" src="/media/animations/ch02-row-column-stories.mp4"></video>
+  <figcaption>Watch the highlight move from a row to a column. The same matrix can be read as one student's full profile or as one exam measured across every student.</figcaption>
+</figure>
+
 Many matrix ideas become simple once you ask:
 
 - what does a row mean?
@@ -538,4 +543,3 @@ list its rows and columns.
 1 & 2 & 3
 \end{bmatrix}
 \]
-

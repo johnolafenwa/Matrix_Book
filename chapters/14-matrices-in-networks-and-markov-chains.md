@@ -288,6 +288,11 @@ flowchart LR
 
 That is a powerful mental model. You are not tracking one individual object anymore. You are tracking a whole cloud of uncertainty.
 
+<figure class="book-media">
+  <video controls playsinline preload="metadata" src="/media/animations/ch14-markov-flow.mp4"></video>
+  <figcaption>Watch the probability mass move through the network. Even though the pieces keep flowing, the overall pattern begins to settle.</figcaption>
+</figure>
+
 ## 14.8 Steady States
 
 Some Markov chains settle toward a stable long-run distribution. This is called a **steady state** or **stationary distribution**.

@@ -1,0 +1,7 @@
+.git
+.venv-media
+node_modules
+dist
+output
+__pycache__/
+*.pyc

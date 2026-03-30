@@ -151,6 +151,11 @@ So understanding the system means understanding powers of `A`.
 
 Diagonalization turns that into a problem about powers of eigenvalues.
 
+<figure class="book-media">
+  <video controls playsinline preload="metadata" src="/media/animations/ch11-diagonal-dynamics.mp4"></video>
+  <figcaption>Repeated multiplication bends the state toward the dominant eigendirection. This is the dynamic picture diagonalization helps explain.</figcaption>
+</figure>
+
 ## Decomposing the initial state
 
 Suppose

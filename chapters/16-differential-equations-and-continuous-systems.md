@@ -233,6 +233,11 @@ You do not need to memorize this blindly. The logic is natural:
 - positive real part means growth,
 - imaginary part means oscillation.
 
+<figure class="book-media">
+  <video controls playsinline preload="metadata" src="/media/animations/ch16-phase-portrait.mp4"></video>
+  <figcaption>Phase portraits are easier to trust once you see points actually flow. Each starting point traces a continuous path rather than jumping from step to step.</figcaption>
+</figure>
+
 ## 16.7 Oscillation and Rotation
 
 Consider

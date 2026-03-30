@@ -285,6 +285,11 @@ That lets us:
 - remove noise,
 - speed up learning algorithms.
 
+<figure class="book-media">
+  <video controls playsinline preload="metadata" src="/media/animations/ch15-pca-projection.mp4"></video>
+  <figcaption>The point cloud is projected onto its main direction of variation. This is the geometric heart of principal component analysis.</figcaption>
+</figure>
+
 ## 15.9 Images Are Matrices
 
 A grayscale image is almost literally a matrix.
