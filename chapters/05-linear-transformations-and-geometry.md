@@ -24,7 +24,7 @@ The remarkable part is that linear transformations do this in a very structured 
 
 ## A Quick Geometry Primer
 
-Before going further, let us fix a few words that will appear repeatedly.
+A few words appear repeatedly in this chapter.
 
 - The **plane** means the usual two-dimensional coordinate world with an \(x\)-axis and a \(y\)-axis.
 - The **origin** is the point \((0,0)\).
@@ -37,7 +37,7 @@ So when we say that a matrix "transforms space," we simply mean:
 
 That may sound abstract, but it becomes concrete as soon as we track a few simple vectors.
 
-## What a Basis Is, Before We Use the Term
+## Basis Vectors
 
 A **basis** is a small set of building-block vectors from which every vector in the space can be assembled.
 
@@ -75,11 +75,67 @@ x\mathbf{e}_1 + y\mathbf{e}_2.
 
 So the basis vectors are the basic ingredients. If you understand what a matrix does to those ingredients, you can understand what it does to every vector made from them.
 
+Here is the picture to keep in mind:
+
+```text
+Standard basis vectors
+
+          y
+          ^
+          |
+      e2  |  (0,1)
+          |   ^
+          |   |
+----------O-----------------> x
+          |
+          +-------> e1 = (1,0)
+```
+
+Now imagine a matrix moving those two arrows. For example, if
+
+\[
+A =
+\begin{bmatrix}
+2 & 1 \\
+0 & 1
+\end{bmatrix},
+\]
+
+then
+
+\[
+A\mathbf{e}_1 =
+\begin{bmatrix}
+2 \\
+0
+\end{bmatrix},
+\qquad
+A\mathbf{e}_2 =
+\begin{bmatrix}
+1 \\
+1
+\end{bmatrix}.
+\]
+
+Visually:
+
+```text
+Before applying A                 After applying A
+
+      e2                               A e2
+      ^                                 ^
+      |                                /
+      |                               /
+O-----> e1                    O------->------> A e1
+```
+
+This is why the basis vectors matter: a matrix is understood by watching where it sends those two basic arrows.
+
 ## Why Geometry Matters
 
 When you see a matrix geometrically, several facts suddenly become natural:
 
-- The **columns** of a matrix tell you where the basic building-block vectors go.
+- The **columns** of a matrix tell you where the basis vectors go.
 - Matrix multiplication means **doing one transformation after another**.
 - Some matrices can be undone and some cannot.
 - Some matrices preserve lengths or angles.
@@ -125,28 +181,7 @@ But the most important idea is not the formula. It is this:
 
 ## The Columns Tell the Story
 
-The symbols
-
-\[
-\mathbf{e}_1 =
-\begin{bmatrix}
-1 \\
-0
-\end{bmatrix},
-\qquad
-\mathbf{e}_2 =
-\begin{bmatrix}
-0 \\
-1
-\end{bmatrix}
-\]
-
-are the two basic unit vectors in the plane:
-
-- \(\mathbf{e}_1\) is one step to the right,
-- \(\mathbf{e}_2\) is one step upward.
-
-They are called the **standard basis vectors**. You can think of them as the default coordinate arrows we use to build every other vector in the plane.
+The vectors \(\mathbf{e}_1\) and \(\mathbf{e}_2\) are the standard basis vectors from the previous section. They are the two arrows from which every vector in the plane is built.
 
 Write the vector \(\mathbf{x}\) as
 

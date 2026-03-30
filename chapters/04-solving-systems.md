@@ -106,7 +106,7 @@ Gaussian elimination is a method for simplifying the system step by step until t
 
 The idea is to use legal row operations to create zeros underneath key entries that lead each row.
 
-Those key entries are called **pivots**. If that word is new to you, do not worry. We will define it carefully before expecting you to use it.
+Those key entries are called **pivots**.
 
 ```mermaid
 flowchart TD
@@ -135,9 +135,7 @@ Why are these legal? Because each operation creates a new system that has exactl
 - Multiplying a row by a nonzero constant scales an equation without changing its meaning.
 - Adding one equation to another in a controlled way produces an equivalent equation.
 
-## What a Pivot Is, in Plain Language
-
-Before the formal definition, it helps to build the right picture.
+## Pivots
 
 When you do elimination, you usually pick one useful entry in a row and use it as the "handle" for cleaning out the entries below it. That handle is the pivot for that stage.
 
