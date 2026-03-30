@@ -23,6 +23,11 @@ If yes:
 
 This equation says: applying `A` to `v` only scales `v`. The direction stays on the same line.
 
+<figure class="book-media">
+  <video controls playsinline preload="metadata" src="/media/animations/ch10-eigenvector-directions.mp4"></video>
+  <figcaption>The highlighted directions stay on their own lines while the others bend away. Those stable directions are eigenvectors.</figcaption>
+</figure>
+
 ## The elevator analogy
 
 Imagine a building full of moving walkways that usually shift you sideways as well as forward. Most people step off in a different direction than they entered.

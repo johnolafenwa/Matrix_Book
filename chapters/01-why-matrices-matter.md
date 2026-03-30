@@ -20,6 +20,11 @@ A matrix is often introduced as a rectangular array of numbers. That description
 
 This book is about learning to see all of those meanings at the same time.
 
+<figure class="book-media">
+  <img src="/media/illustrations/ch01-matrix-applications.png" alt="Editorial collage showing a recommendation interface, a rotated photo on a phone, a traffic network, and heat spreading across a plate." />
+  <figcaption>One object, many lives: recommendation systems, image manipulation, network flow, and physical diffusion can all be described with matrices.</figcaption>
+</figure>
+
 ## The Big Idea
 
 At first glance, a matrix looks passive, like a spreadsheet. In practice, matrices are active. They take inputs, combine them in structured ways, and produce outputs.
@@ -438,4 +443,3 @@ Explain in words how it transforms an input vector `(x, y)`.
 6. Why is it useful that a matrix can represent many equations or many relationships at once?
 7. Make a small `2 x 3` matrix that could represent sales of two products over three days. Label the meaning of rows and columns.
 8. Look back at the travel-time matrix in this chapter. Why are the diagonal entries zero?
-

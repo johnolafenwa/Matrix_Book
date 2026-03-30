@@ -14,6 +14,11 @@ It says that any linear transformation can be understood as:
 
 This chapter explains that idea carefully and shows why SVD is so useful in data, compression, and approximation.
 
+<figure class="book-media">
+  <video controls playsinline preload="metadata" src="/media/animations/ch13-svd-rotate-stretch-rotate.mp4"></video>
+  <figcaption>SVD breaks a general transformation into three clean moves: rotate, stretch, and rotate again.</figcaption>
+</figure>
+
 ## The headline statement
 
 For any `m x n` matrix `A`, there exist matrices

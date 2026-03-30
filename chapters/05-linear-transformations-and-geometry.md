@@ -131,6 +131,11 @@ O-----> e1                    O------->------> A e1
 
 This is why the basis vectors matter: a matrix is understood by watching where it sends those two basic arrows.
 
+<figure class="book-media">
+  <video controls playsinline preload="metadata" src="/media/animations/ch05-basis-vectors-transform.mp4"></video>
+  <figcaption>Play the animation to see the basis vectors move under a matrix. Their images become the columns of the matrix.</figcaption>
+</figure>
+
 ## Why Geometry Matters
 
 When you see a matrix geometrically, several facts suddenly become natural:

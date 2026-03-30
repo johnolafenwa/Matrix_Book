@@ -36,6 +36,11 @@ point p
 
 The shortest path to the line is perpendicular to the line. Linear algebra uses that idea over and over again.
 
+<figure class="book-media">
+  <video controls playsinline preload="metadata" src="/media/animations/ch09-least-squares-projection.mp4"></video>
+  <figcaption>Play the animation to see a vector drop to its closest point on a line. Least squares is this perpendicular-drop idea in higher dimensions.</figcaption>
+</figure>
+
 ## The dot product
 
 The dot product of two vectors `u` and `v` in `R^n` is

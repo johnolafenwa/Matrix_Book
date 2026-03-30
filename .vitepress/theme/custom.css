@@ -184,6 +184,31 @@ body {
   box-shadow: var(--book-code-shadow);
 }
 
+.vp-doc .book-media {
+  margin: 1.8rem 0;
+  padding: 1rem;
+  border: 1px solid var(--book-card-border);
+  border-radius: 24px;
+  background: var(--book-card-bg);
+  box-shadow: var(--book-card-shadow);
+}
+
+.vp-doc .book-media img,
+.vp-doc .book-media video {
+  display: block;
+  width: 100%;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.vp-doc .book-media figcaption {
+  margin-top: 0.9rem;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--book-muted-text);
+}
+
 .vp-doc .mermaid-render {
   overflow-x: auto;
   margin: 1.8rem 0;

@@ -12,6 +12,11 @@ Matrices are a natural language for these questions. In earlier chapters, matric
 
 This is one of the reasons matrices are so powerful. The same object can describe geometry, equations, and movement on graphs.
 
+<figure class="book-media">
+  <img src="/media/illustrations/ch14-network-city.png" alt="Top-down editorial illustration of a city transit network with stations as nodes and routes as connected lines." />
+  <figcaption>Network matrices turn a messy city of routes and connections into a structure that can be counted, analyzed, and predicted.</figcaption>
+</figure>
+
 ## The Big Idea
 
 There are two closely related stories in this chapter:

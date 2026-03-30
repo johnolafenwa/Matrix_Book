@@ -18,6 +18,11 @@ Quadratic forms are algebraic versions of such landscapes.
 
 The matrix behind the quadratic form tells you how space is being curved.
 
+<figure class="book-media">
+  <img src="/media/illustrations/ch12-quadratic-landscape.png" alt="Concept illustration of a bowl-shaped surface transitioning into a saddle-shaped surface with contour lines." />
+  <figcaption>A quadratic form can be pictured as a landscape: bowls, ridges, and saddle-like regions reveal how the matrix curves space.</figcaption>
+</figure>
+
 ## Quadratic forms
 
 Given a symmetric matrix `A`, the expression

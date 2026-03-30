@@ -25,6 +25,11 @@ But that formula is only the surface. Underneath it is a geometric story:
 
 So determinants are not really about a formula. They are about what a transformation does to space.
 
+<figure class="book-media">
+  <video controls playsinline preload="metadata" src="/media/animations/ch06-determinant-area-scale.mp4"></video>
+  <figcaption>This animation shows the unit square turning into a new shape. The determinant records the area scaling factor.</figcaption>
+</figure>
+
 ## The Determinant in One Sentence
 
 For a square matrix, the determinant tells you:
