@@ -8,7 +8,7 @@ By now, matrices are no longer just rectangular arrays of numbers. They can add,
 
 That sentence is worth slowing down for.
 
-If you feed a matrix a vector, the matrix sends that vector somewhere else. A vector that used to point northeast might get stretched, rotated, reflected, or tilted. A square grid might become a slanted grid. A circle might become an ellipse.
+If you feed a matrix a vector, the matrix sends that vector somewhere else. Here a **vector** just means a directed arrow, or equivalently a coordinate pair like \((x,y)\). A vector that used to point northeast might get stretched, rotated, reflected, or tilted. A square grid might become a slanted grid. A circle might become an ellipse.
 
 This geometric viewpoint is one of the deepest ideas in linear algebra. It turns matrix multiplication from a symbol-pushing exercise into something you can picture.
 
@@ -22,11 +22,64 @@ Think of a sheet of transparent graph paper. A matrix is like a rule that grabs 
 
 The remarkable part is that linear transformations do this in a very structured way. They preserve straightness and preserve the origin. That structure is what makes them mathematically tractable and enormously useful.
 
+## A Quick Geometry Primer
+
+Before going further, let us fix a few words that will appear repeatedly.
+
+- The **plane** means the usual two-dimensional coordinate world with an \(x\)-axis and a \(y\)-axis.
+- The **origin** is the point \((0,0)\).
+- A **vector** in the plane can be drawn as an arrow starting at the origin and ending at some point \((x,y)\).
+- A **transformation** is just a rule that takes each input vector and produces an output vector.
+
+So when we say that a matrix "transforms space," we simply mean:
+
+> every input arrow gets turned into a new output arrow according to a consistent rule.
+
+That may sound abstract, but it becomes concrete as soon as we track a few simple vectors.
+
+## What a Basis Is, Before We Use the Term
+
+A **basis** is a small set of building-block vectors from which every vector in the space can be assembled.
+
+In the plane, the most common basis is
+
+\[
+\mathbf{e}_1 =
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix},
+\qquad
+\mathbf{e}_2 =
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}.
+\]
+
+These are the **standard basis vectors**:
+
+- \(\mathbf{e}_1\) means one step to the right,
+- \(\mathbf{e}_2\) means one step upward.
+
+Why are they important? Because every vector \((x,y)\) can be built from them:
+
+\[
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
+=
+x\mathbf{e}_1 + y\mathbf{e}_2.
+\]
+
+So the basis vectors are the basic ingredients. If you understand what a matrix does to those ingredients, you can understand what it does to every vector made from them.
+
 ## Why Geometry Matters
 
 When you see a matrix geometrically, several facts suddenly become natural:
 
-- The **columns** of a matrix tell you where the standard basis vectors go.
+- The **columns** of a matrix tell you where the basic building-block vectors go.
 - Matrix multiplication means **doing one transformation after another**.
 - Some matrices can be undone and some cannot.
 - Some matrices preserve lengths or angles.
@@ -71,6 +124,29 @@ This is the algebraic formula. Geometrically, it means the point \((x,y)\) is se
 But the most important idea is not the formula. It is this:
 
 ## The Columns Tell the Story
+
+The symbols
+
+\[
+\mathbf{e}_1 =
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix},
+\qquad
+\mathbf{e}_2 =
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+\]
+
+are the two basic unit vectors in the plane:
+
+- \(\mathbf{e}_1\) is one step to the right,
+- \(\mathbf{e}_2\) is one step upward.
+
+They are called the **standard basis vectors**. You can think of them as the default coordinate arrows we use to build every other vector in the plane.
 
 Write the vector \(\mathbf{x}\) as
 
@@ -118,7 +194,7 @@ So:
 - the first column tells you where \(\mathbf{e}_1 = (1,0)\) goes,
 - the second column tells you where \(\mathbf{e}_2 = (0,1)\) goes.
 
-Once you know where the basis vectors go, you know where **every** vector goes.
+Once you know where those basis vectors go, you know where **every** vector goes.
 
 That is one of the central ideas of the whole subject.
 
@@ -132,6 +208,10 @@ flowchart LR
 ```
 
 ## Linear Transformations
+
+Not every rule that moves points around is linear. Some rules bend space. Some shift everything by the same amount. Some distort different regions in different ways.
+
+Linear transformations are the special rules that behave predictably with respect to addition and scaling.
 
 A transformation \(T\) is called **linear** if it satisfies two rules:
 

@@ -104,7 +104,9 @@ Everything to the left of the bar controls the variables. Everything to the righ
 
 Gaussian elimination is a method for simplifying the system step by step until the answers become easy to read.
 
-The idea is to use legal row operations to create zeros below pivots.
+The idea is to use legal row operations to create zeros underneath key entries that lead each row.
+
+Those key entries are called **pivots**. If that word is new to you, do not worry. We will define it carefully before expecting you to use it.
 
 ```mermaid
 flowchart TD
@@ -132,6 +134,35 @@ Why are these legal? Because each operation creates a new system that has exactl
 - Swapping rows just changes the order of equations.
 - Multiplying a row by a nonzero constant scales an equation without changing its meaning.
 - Adding one equation to another in a controlled way produces an equivalent equation.
+
+## What a Pivot Is, in Plain Language
+
+Before the formal definition, it helps to build the right picture.
+
+When you do elimination, you usually pick one useful entry in a row and use it as the "handle" for cleaning out the entries below it. That handle is the pivot for that stage.
+
+For example, in
+
+\[
+\left[
+\begin{array}{cc|c}
+1 & 1 & 5 \\
+2 & -1 & 1
+\end{array}
+\right]
+\]
+
+the `1` in the upper-left corner is the first pivot. We use it to eliminate the `2` beneath it.
+
+So a pivot is not just any nonzero number. It is the entry that leads the current row and helps organize the elimination process.
+
+Think of elimination as clearing a staircase shape through the matrix:
+
+- pick a pivot,
+- use it to clear entries below,
+- move one step down and to the right,
+- pick the next pivot,
+- repeat.
 
 ## Worked Example: A `2 x 2` System
 
@@ -186,7 +217,15 @@ We used the first equation to cancel `x` from the second equation. Elimination i
 
 ## Pivots
 
-A **pivot** is a leading nonzero entry used to eliminate entries below or above it.
+A **pivot** is a leading nonzero entry in a row after earlier elimination steps have been carried out.
+
+In practice, it is the entry you use as an anchor:
+
+- it leads the row,
+- it helps clear entries below it,
+- and later it helps reveal which variables are determined and which are free.
+
+People also talk about a **pivot position**, which means the location of that pivot inside the matrix.
 
 In row echelon form, pivots step to the right as you move downward.
 
@@ -201,6 +240,14 @@ Example:
 \]
 
 The pivots are `1`, `3`, and `5`.
+
+Notice the pattern:
+
+- the first pivot is in the first column,
+- the second pivot is farther to the right,
+- the third pivot is farther right again.
+
+That staircase pattern is what elimination is trying to create.
 
 Pivots tell us a great deal:
 
@@ -660,4 +707,3 @@ tell you about a system?
 8. Give an example of a system with infinitely many solutions.
 9. In geometric terms, what does solving a `2 x 2` linear system mean?
 10. Explain in your own words why row reduction preserves solutions.
-
