@@ -12,6 +12,11 @@ BLUE = "#3C6E8F"
 GREEN = "#2F9E7C"
 PURPLE = "#7C5C99"
 GRID = "#BFD4CE"
+PACE = 1.6
+
+
+def paced(seconds: float):
+    return round(seconds * PACE, 2)
 
 
 def make_title(title: str, subtitle: str | None = None):
@@ -148,13 +153,13 @@ class BasisVectorsTransform(Scene):
         self.play(FadeIn(label_e1), FadeIn(label_e2), FadeIn(caption))
 
         self.play(FadeOut(label_e1), FadeOut(label_e2), Transform(caption, Text("Apply A = [[2, 1], [0, 1]].", color=INK, font_size=24).to_edge(DOWN)))
-        self.play(ApplyMatrix([[2, 1], [0, 1]], transform_group), run_time=3)
+        self.play(ApplyMatrix([[2, 1], [0, 1]], transform_group), run_time=paced(3))
 
         moved_label_1 = Text("A e1", color=RED, font_size=24).next_to(e1.get_end(), DOWN, buff=0.18)
         moved_label_2 = Text("A e2", color=GREEN, font_size=24).next_to(e2.get_end(), LEFT, buff=0.18)
         end_caption = Text("Those moved arrows are the columns of A.", color=TEAL, font_size=24).to_edge(DOWN)
         self.play(FadeIn(moved_label_1), FadeIn(moved_label_2), Transform(caption, end_caption))
-        self.wait(1.2)
+        self.wait(paced(1.2))
 
 
 class DeterminantAreaScale(Scene):
@@ -178,9 +183,9 @@ class DeterminantAreaScale(Scene):
         self.play(Create(plane), DrawBorderThenFill(square), GrowArrow(e1), GrowArrow(e2))
         self.play(FadeIn(caption))
         self.play(Transform(caption, Text("Apply A = [[2, 1], [0, 1.5]].", color=INK, font_size=26).to_edge(DOWN)))
-        self.play(ApplyMatrix([[2, 1], [0, 1.5]], group), run_time=3)
+        self.play(ApplyMatrix([[2, 1], [0, 1.5]], group), run_time=paced(3))
         self.play(Transform(caption, Text("det(A) = 3, so the area triples.", color=GOLD, font_size=26).to_edge(DOWN)))
-        self.wait(1.2)
+        self.wait(paced(1.2))
 
 
 class LeastSquaresProjection(Scene):
@@ -207,7 +212,7 @@ class LeastSquaresProjection(Scene):
         self.play(GrowArrow(point_arrow), FadeIn(point_dot))
         self.play(GrowArrow(proj_arrow), FadeIn(proj_dot), Create(residual), Create(right_angle))
         self.play(FadeIn(caption))
-        self.wait(1.3)
+        self.wait(paced(1.3))
 
 
 class EigenvectorDirections(Scene):
@@ -239,8 +244,8 @@ class EigenvectorDirections(Scene):
         self.play(FadeIn(title, shift=DOWN * 0.2))
         self.play(Create(plane), Create(line_one), Create(line_two))
         self.play(*[GrowArrow(arrow) for arrow in arrows], FadeIn(caption))
-        self.play(Transform(arrows, targets), run_time=3)
-        self.wait(1.2)
+        self.play(Transform(arrows, targets), run_time=paced(3))
+        self.wait(paced(1.2))
 
 
 class SVDRotateStretchRotate(Scene):
@@ -255,13 +260,13 @@ class SVDRotateStretchRotate(Scene):
         self.play(FadeIn(title, shift=DOWN * 0.2))
         self.play(Create(circle), GrowArrow(axis_x), GrowArrow(axis_y), FadeIn(caption))
 
-        self.play(ApplyMatrix(rotation_matrix(np.deg2rad(35)), frame), run_time=2.4)
+        self.play(ApplyMatrix(rotation_matrix(np.deg2rad(35)), frame), run_time=paced(2.4))
         self.play(Transform(caption, Text("2. Stretch along perpendicular directions", color=INK, font_size=24).to_edge(DOWN)))
-        self.play(ApplyMatrix([[2.2, 0], [0, 0.8]], frame), run_time=2.6)
+        self.play(ApplyMatrix([[2.2, 0], [0, 0.8]], frame), run_time=paced(2.6))
         self.play(Transform(caption, Text("3. Rotate again to get the final ellipse", color=INK, font_size=24).to_edge(DOWN)))
-        self.play(ApplyMatrix(rotation_matrix(np.deg2rad(-25)), frame), run_time=2.4)
+        self.play(ApplyMatrix(rotation_matrix(np.deg2rad(-25)), frame), run_time=paced(2.4))
         self.play(Transform(caption, Text("That is the geometric heart of SVD.", color=TEAL, font_size=24).to_edge(DOWN)))
-        self.wait(1.2)
+        self.wait(paced(1.2))
 
 
 class RowColumnStories(Scene):
@@ -281,8 +286,9 @@ class RowColumnStories(Scene):
         self.play(FadeIn(title, shift=DOWN * 0.2))
         self.play(FadeIn(matrix, shift=UP * 0.1))
         self.play(Create(row_box), FadeIn(caption))
+        self.wait(paced(0.8))
         self.play(Transform(row_box, col_box), Transform(caption, make_caption("A column can mean one exam across all students.", TEAL)))
-        self.wait(1.1)
+        self.wait(paced(1.1))
 
 
 class MatrixProductColumns(Scene):
@@ -302,9 +308,9 @@ class MatrixProductColumns(Scene):
         self.play(FadeIn(title, shift=DOWN * 0.2))
         self.play(Create(plane), GrowArrow(arrow1), GrowArrow(arrow2), FadeIn(caption))
         self.play(Transform(caption, make_caption("Now A pushes each column into a new column of AB.")))
-        self.play(Transform(arrow1, target1), Transform(arrow2, target2), run_time=2.8)
+        self.play(Transform(arrow1, target1), Transform(arrow2, target2), run_time=paced(2.8))
         self.play(Transform(caption, make_caption("That is the column-combination view of matrix multiplication.", TEAL)))
-        self.wait(1.1)
+        self.wait(paced(1.1))
 
 
 class SystemIntersectionCases(Scene):
@@ -318,6 +324,7 @@ class SystemIntersectionCases(Scene):
 
         self.play(FadeIn(title, shift=DOWN * 0.2))
         self.play(Create(plane), Create(line_a), Create(line_b), FadeIn(point), FadeIn(caption))
+        self.wait(paced(0.8))
 
         parallel_a = line_from_slope_intercept(1, 1.2, TEAL)
         parallel_b = line_from_slope_intercept(1, -0.8, GOLD)
@@ -327,6 +334,7 @@ class SystemIntersectionCases(Scene):
             FadeOut(point),
             Transform(caption, make_caption("Parallel lines mean no solution.", RED)),
         )
+        self.wait(paced(0.8))
 
         same_line = line_from_slope_intercept(0.7, 0.4, TEAL)
         same_line_2 = line_from_slope_intercept(0.7, 0.4, GOLD)
@@ -335,7 +343,7 @@ class SystemIntersectionCases(Scene):
             Transform(line_b, same_line_2),
             Transform(caption, make_caption("The same line means infinitely many solutions.", GOLD)),
         )
-        self.wait(1.1)
+        self.wait(paced(1.1))
 
 
 class PivotStaircase(Scene):
@@ -370,7 +378,7 @@ class PivotStaircase(Scene):
         for box in pivot_boxes:
             self.play(Create(box))
         self.play(Create(staircase), FadeIn(caption))
-        self.wait(1.1)
+        self.wait(paced(1.1))
 
 
 class InverseUndo(Scene):
@@ -395,10 +403,10 @@ class InverseUndo(Scene):
 
         self.play(FadeIn(title, shift=DOWN * 0.2))
         self.play(Create(plane), DrawBorderThenFill(shape), GrowArrow(e1), GrowArrow(e2), FadeIn(caption))
-        self.play(ApplyMatrix(A, group), run_time=2.8)
+        self.play(ApplyMatrix(A, group), run_time=paced(2.8))
         self.play(Transform(caption, make_caption("Now A inverse reverses the move exactly.", TEAL)))
-        self.play(ApplyMatrix(A_inv, group), run_time=2.8)
-        self.wait(1.1)
+        self.play(ApplyMatrix(A_inv, group), run_time=paced(2.8))
+        self.wait(paced(1.1))
 
 
 class FactorizationSteps(Scene):
@@ -419,15 +427,15 @@ class FactorizationSteps(Scene):
         self.play(Create(plane), DrawBorderThenFill(square), FadeIn(caption))
 
         self.play(Transform(caption, make_caption("Step 1: a lower-triangular shear.")))
-        self.play(ApplyMatrix([[1, 0], [0.7, 1]], group), run_time=2.2)
+        self.play(ApplyMatrix([[1, 0], [0.7, 1]], group), run_time=paced(2.2))
 
         self.play(Transform(caption, make_caption("Step 2: an upper-triangular shear.")))
-        self.play(ApplyMatrix([[1, 0.9], [0, 1]], group), run_time=2.2)
+        self.play(ApplyMatrix([[1, 0.9], [0, 1]], group), run_time=paced(2.2))
 
         self.play(Transform(caption, make_caption("Step 3: a simple scaling.")))
-        self.play(ApplyMatrix([[1.3, 0], [0, 0.85]], group), run_time=2.2)
+        self.play(ApplyMatrix([[1.3, 0], [0, 0.85]], group), run_time=paced(2.2))
         self.play(Transform(caption, make_caption("Together, these simple pieces build the full transformation.", TEAL)))
-        self.wait(1.1)
+        self.wait(paced(1.1))
 
 
 class SpanToPlane(Scene):
@@ -448,8 +456,8 @@ class SpanToPlane(Scene):
         self.play(FadeIn(title, shift=DOWN * 0.2))
         self.play(Create(plane), GrowArrow(arrow1), Create(span_line), FadeIn(caption))
         self.play(GrowArrow(arrow2), Transform(caption, make_caption("Add an independent vector, and combinations fill the plane.")))
-        self.play(FadeIn(lattice, lag_ratio=0.02, run_time=2.2))
-        self.wait(1.1)
+        self.play(FadeIn(lattice, lag_ratio=0.02, run_time=paced(2.2)))
+        self.wait(paced(1.1))
 
 
 class NullSpaceCollapse(Scene):
@@ -469,8 +477,8 @@ class NullSpaceCollapse(Scene):
         self.play(FadeIn(title, shift=DOWN * 0.2))
         self.play(Create(plane), GrowArrow(arrow1), GrowArrow(arrow2), FadeIn(dot1), FadeIn(dot2), Create(connector), FadeIn(caption))
         self.play(Transform(caption, make_caption("A singular matrix collapses their difference into the null space.", TEAL)))
-        self.play(ApplyMatrix([[1, 1], [0, 0]], group), run_time=2.8)
-        self.wait(1.1)
+        self.play(ApplyMatrix([[1, 1], [0, 0]], group), run_time=paced(2.8))
+        self.wait(paced(1.1))
 
 
 class OrthonormalCoordinates(Scene):
@@ -487,9 +495,9 @@ class OrthonormalCoordinates(Scene):
         self.play(FadeIn(title, shift=DOWN * 0.2))
         self.play(Create(plane), GrowArrow(basis1), GrowArrow(basis2), GrowArrow(point), DrawBorderThenFill(skew_cell), FadeIn(caption))
         self.play(Transform(caption, make_caption("Rotate and rescale to an orthonormal basis.")))
-        self.play(ApplyMatrix([[1, -0.5], [-0.1, 1.2]], frame), run_time=2.6)
+        self.play(ApplyMatrix([[1, -0.5], [-0.1, 1.2]], frame), run_time=paced(2.6))
         self.play(Transform(caption, make_caption("Now the axes are cleaner, and geometry is easier to read.", TEAL)))
-        self.wait(1.1)
+        self.wait(paced(1.1))
 
 
 class DiagonalDynamics(Scene):
@@ -515,9 +523,9 @@ class DiagonalDynamics(Scene):
         for _ in range(4):
             history.add(Dot(current, radius=0.05, color=BLUE))
             new = np.array([*(A @ current[:2]), 0])
-            self.play(FadeIn(history[-1]), Transform(arrow, Arrow(ORIGIN, new, buff=0, color=TEAL, stroke_width=8)), run_time=1.1)
+            self.play(FadeIn(history[-1]), Transform(arrow, Arrow(ORIGIN, new, buff=0, color=TEAL, stroke_width=8)), run_time=paced(1.1))
             current = new
-        self.wait(1.1)
+        self.wait(paced(1.1))
 
 
 class MarkovFlow(Scene):
@@ -560,13 +568,13 @@ class MarkovFlow(Scene):
         self.play(FadeIn(title, shift=DOWN * 0.2))
         self.play(Create(edges), Create(outlines), FadeIn(labels), FadeIn(masses), FadeIn(caption))
         for state in states[1:-1]:
-            self.play(Transform(masses, mass_group(state)), run_time=1.2)
+            self.play(Transform(masses, mass_group(state)), run_time=paced(1.2))
         self.play(
             Transform(masses, mass_group(states[-1])),
             Transform(caption, make_caption("After several steps, the distribution stabilizes.", TEAL)),
-            run_time=1.4,
+            run_time=paced(1.4),
         )
-        self.wait(1.1)
+        self.wait(paced(1.1))
 
 
 class PCAProjection(Scene):
@@ -592,8 +600,8 @@ class PCAProjection(Scene):
 
         self.play(FadeIn(title, shift=DOWN * 0.2))
         self.play(Create(plane), FadeIn(dots, lag_ratio=0.04), Create(line), FadeIn(caption))
-        self.play(Transform(dots, projected_dots), Transform(caption, make_caption("Projecting onto that line keeps the main pattern in one dimension.", TEAL)), run_time=2.4)
-        self.wait(1.1)
+        self.play(Transform(dots, projected_dots), Transform(caption, make_caption("Projecting onto that line keeps the main pattern in one dimension.", TEAL)), run_time=paced(2.4))
+        self.wait(paced(1.1))
 
 
 class ContinuousPhasePortrait(Scene):
@@ -628,9 +636,9 @@ class ContinuousPhasePortrait(Scene):
         self.play(Create(plane), FadeIn(caption))
         self.add(*traces)
         self.add(*dots)
-        self.play(*[MoveAlongPath(dot, spiral_path(seed)) for dot, seed in zip(dots, seeds)], run_time=4.8, rate_func=linear)
+        self.play(*[MoveAlongPath(dot, spiral_path(seed)) for dot, seed in zip(dots, seeds)], run_time=paced(4.8), rate_func=linear)
         self.play(Transform(caption, make_caption("This is the geometric meaning of a phase portrait.", TEAL)))
-        self.wait(1.1)
+        self.wait(paced(1.1))
 
 
 class ConditioningSensitivity(Scene):
@@ -658,6 +666,6 @@ class ConditioningSensitivity(Scene):
             TransformFromCopy(d1, out1),
             TransformFromCopy(d2, out2),
             Transform(caption, make_caption("An ill-conditioned problem can spread those tiny differences into large output changes.", RED)),
-            run_time=2.4,
+            run_time=paced(2.4),
         )
-        self.wait(1.1)
+        self.wait(paced(1.1))
