@@ -4,3 +4,5 @@ dist
 output
 .vercel
 .venv-media
+__pycache__/
+*.pyc
